@@ -1,20 +1,15 @@
 export default class UI {
     constructor() {
         this.loader = document.querySelector('.loader')
-        this.gamesList = document.getElementById('gamesList')
-        this.gameDetails = document.querySelector('.game-details')
-        this.filters = document.querySelectorAll('.nav-link')
-        this.indicator = document.querySelector('.indicator')
     }
     displayGames(games) {
-        this.gamesList.innerHTML = ''
+        let gamesList = document.querySelector('.games-list')
+        gamesList.innerHTML = ''
         games.forEach(game => {
-            this.gamesList.innerHTML +=
+            gamesList.innerHTML +=
                 `<div 
                     class="col align-items-stretch game"
                     data-id="${game.id}"
-                    data-bs-toggle="modal"
-                    data-bs-target="#modal"
                 >
                     <div class="card h-100">
                         <img src="${game.thumbnail}" class="card-img-top" alt="${game.title}" loading="lazy"/>
@@ -39,7 +34,8 @@ export default class UI {
         })
     }
     displayGameDetails({ title, platform, genre, status, description, game_url, thumbnail }) {
-        this.gameDetails.innerHTML = `
+        let gameDetails = document.querySelector('.game-details__content')
+        gameDetails.innerHTML = `
             <div class="d-flex gap-3 flex-column flex-lg-row align-items-lg-start">
                 <img src="${thumbnail}" alt="${title}" loading='lazy'/>
                 <div class="d-flex flex-column gap-3 align-items-start">

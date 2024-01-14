@@ -43,101 +43,79 @@
         <div></div>
       </div>
     </div>
-    <div class="wrapper">
-      <aside>
-        <nav>
-          <h1 class="navbar-brand fs-5 mb-4 text-capitalize">
-            <i class="fa-solid fa-gamepad"></i>
-            <span class="fw-bold">Game reviews</span>
-          </h1>
-          <ul class="navbar-nav">
-            <div class="indicator"></div>
-            <li class="nav-item">
-              <a href="#" class="nav-link active" data-category="mmorpg">
-                <i class="fa-solid fa-dungeon nav-link-icon"></i>
-                <span class="fw-bold text-uppercase nav-link-name">
-                  mmorpg
-                </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-category="shooter">
-                <i class="fa-solid fa-crosshairs nav-link-icon"></i>
-                <span class="fw-bold text-uppercase nav-link-name">
-                  shooter
-                </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-category="sailing">
-                <i class="fa-solid fa-ship nav-link-icon"></i>
-                <span class="fw-bold text-uppercase nav-link-name">
-                  sailing
-                </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-category="permadeath">
-                <i class="fa-solid fa-skull nav-link-icon"></i>
-                <span class="fw-bold text-uppercase nav-link-name">
-                  permadeath
-                </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-category="superhero">
-                <i class="fa-solid fa-mask nav-link-icon"></i>
-                <span class="fw-bold text-uppercase nav-link-name">
-                  super hero
-                </span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" data-category="pixel">
-                <i class="fa-solid fa-pen-nib nav-link-icon"></i>
-                <span class="fw-bold text-uppercase nav-link-name">pixel</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </div>
-    <div class="container-fluid games-container">
-      <div
-        id="modal"
-        class="modal fade"
-        tabindex="-1"
-        aria-labelledby="modal"
-        aria-hidden="true"
-      >
-        <div class="container">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title">Game Details</h2>
-                <i
-                  type="button"
-                  class="fa-solid fa-x"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></i>
-              </div>
-              <div class="modal-body game-details"></div>
-            </div>
-          </div>
-        </div>
+    <section class="games">
+      <div class="wrapper">
+        <aside>
+          <nav>
+            <h1 class="navbar-brand fs-5 mb-4 text-capitalize">
+              <i class="fa-solid fa-gamepad"></i>
+              <span class="fw-bold">Game reviews</span>
+            </h1>
+            <ul class="navbar-nav">
+              <div class="indicator"></div>
+              <li class="nav-item">
+                <a href="#" class="nav-link active" data-category="mmorpg">
+                  <i class="fa-solid fa-dungeon nav-link-icon"></i>
+                  <span class="fw-bold text-uppercase nav-link-name">
+                    mmorpg
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" data-category="shooter">
+                  <i class="fa-solid fa-crosshairs nav-link-icon"></i>
+                  <span class="fw-bold text-uppercase nav-link-name">
+                    shooter
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" data-category="sailing">
+                  <i class="fa-solid fa-ship nav-link-icon"></i>
+                  <span class="fw-bold text-uppercase nav-link-name">
+                    sailing
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" data-category="permadeath">
+                  <i class="fa-solid fa-skull nav-link-icon"></i>
+                  <span class="fw-bold text-uppercase nav-link-name">
+                    permadeath
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" data-category="superhero">
+                  <i class="fa-solid fa-mask nav-link-icon"></i>
+                  <span class="fw-bold text-uppercase nav-link-name">
+                    super hero
+                  </span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" data-category="pixel">
+                  <i class="fa-solid fa-pen-nib nav-link-icon"></i>
+                  <span class="fw-bold text-uppercase nav-link-name"
+                    >pixel</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
       </div>
-      <div
-        class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 py-3 g-1"
-        id="gamesList"
-      ></div>
-    </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
-      integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+      <div class="p-2 games-list"></div>
+    </section>
+    <section class="game-details text-light d-none">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center py-3">
+          <h2>Game Details</h2>
+          <i class="fa-solid fa-x close-btn"></i>
+        </div>
+        <div class="game-details__content py-3"></div>
+      </div>
+    </section>
     <script src="scripts/main.js" type="module"></script>
   </body>
 </html>

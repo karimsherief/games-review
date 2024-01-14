@@ -4,12 +4,9 @@
     --nav-width: 60px;
 }
 
-
 body {
     font-family: 'Pixelify Sans', sans-serif;
-    height: 100vh;
     background-color: #222;
-    display: flex;
 }
 
 p {
@@ -53,10 +50,6 @@ a {
     align-items: center;
     justify-content: center;
 
-}
-
-.loader.hide {
-    display: none;
 }
 
 .pacman,
@@ -151,8 +144,9 @@ a {
     animation-delay: -2.94s;
 }
 
-.wrapper {
 
+
+.wrapper {
     width: var(--nav-width);
 }
 
@@ -203,15 +197,6 @@ nav {
     color: #222
 }
 
-.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 5px;
-    height: 32px;
-    background-color: #29fd53
-}
-
 .indicator {
     --left: 15px;
     display: none;
@@ -226,6 +211,11 @@ nav {
     transition: .3s ease;
 }
 
+.games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
 .game {
     transform: scale(.98);
     transition: .3s ease;
@@ -238,25 +228,6 @@ nav {
     filter: grayscale(0);
 }
 
-
-
-.modal {
-    background-color: #222;
-    width: 100%;
-    height: 100%;
-
-}
-
-.modal-dialog {
-    max-width: 100%;
-    color: var(--primary-color);
-}
-
-.modal-content {
-    background-color: transparent;
-    border: none;
-}
-
-.modal-header {
-    border: none;
+.close-btn {
+    cursor: pointer;
 }

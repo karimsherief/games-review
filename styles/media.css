@@ -1,6 +1,46 @@
+@media screen and (min-width:451px) and (max-width:767px) {
+
+    .games {
+        display: grid;
+        grid-template-columns: 65px 1fr;
+    }
+
+    .navbar-brand {
+        padding-left: 17px;
+        gap: 17px;
+    }
+
+    .nav-link {
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        padding-block: 10px;
+        height: 50px;
+        overflow: hidden;
+        transition: .3s ease color;
+    }
+
+    .nav-link-name {
+        writing-mode: vertical-lr;
+        transform: translateY(10px);
+    }
+
+    .navbar-nav .nav-link.active {
+        background-color: #29fd53;
+        color: #fff;
+        height: 100%;
+        transition: .5s ease height;
+    }
+
+    .nav-link.active .nav-link-name {
+        transform: translateY(0);
+    }
+}
+
 @media screen and (min-width: 768px) {
-    .games-container {
-        width: calc(100% - calc(var(--nav-width) + 156px));
+    .games {
+        display: grid;
+        grid-template-columns: 225px 1fr;
     }
 
     .wrapper {
@@ -12,11 +52,20 @@
         width: calc(var(--nav-width) + 156px);
         padding: 1rem 1rem 0 0
     }
+
+    .active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 5px;
+        height: 32px;
+        background-color: #29fd53
+    }
 }
 
 @media screen and (max-width:450px) {
-    .games-container {
-        width: 100%;
+    .games {
+        padding-bottom: 100px;
     }
 
     .wrapper {
@@ -124,6 +173,7 @@
 }
 
 @media screen and (max-width:375px) {
+
     aside {
         width: 250px;
     }

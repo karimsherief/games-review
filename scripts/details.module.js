@@ -4,21 +4,32 @@ import UI from "./ui.module.js";
 export default class Details {
     constructor() {
         this.ui = new UI()
+        this.currentGame = null
     }
     async getGameDetails(gameId) {
+        this.ui.loader.classList.remove('d-none')
+        if (this.currentGame?.id !== gameId) {
+            document.querySelector('.game-details__content').innerHTML = ''
+            const res = await fetch(`${API}/game?id=${gameId}`, {
+                headers
+            });
 
-        this.ui.loader.classList.remove('hide')
-        this.ui.gameDetails.innerHTML = ''
+            const data = await res.json();
 
-        const res = await fetch(`${API}/game?id=${gameId}`, {
-            headers
-        });
+            this.currentGame = {
+                id: gameId,
+                title: data.title,
+                platform: data.platform,
+                genre: data.genre,
+                status: data.status,
+                description: data.description,
+                game_url: data.game_url,
+                thumbnail: data.thumbnail
+            }
+        }
 
-        const data = await res.json();
+        this.ui.loader.classList.add('d-none')
 
-        this.ui.loader.classList.add('hide')
-        
-
-        this.ui.displayGameDetails(data)
+        this.ui.displayGameDetails(this.currentGame)
     }
 }
